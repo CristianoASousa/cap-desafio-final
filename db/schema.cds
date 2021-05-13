@@ -4,7 +4,7 @@ using {cuid} from '@sap/cds/common';
 
 entity Departments : cuid {
     name    : String;
-    manager : Association to Employees;
+    manager : String;
 }
 
 entity Employees : cuid {
@@ -18,4 +18,6 @@ entity Employees : cuid {
     hourPublicTransport  : Boolean;
     environmentEquipment : Boolean;
     department           : Association to Departments;
+    inHomeOffice         : Boolean;
+    score                : Integer;
 }
