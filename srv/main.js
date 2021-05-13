@@ -4,7 +4,7 @@ module.exports = (srv) => {
 
     const { Employees } = cds.entities('desafio.final')
 
-    srv.on('CREATE', 'Employees', async (req, next) => {
+    srv.on(['CREATE','UPDATE'], 'Employees', async (req, next) => {
         const {
             groupRisk,
             livesRiskGroup,
