@@ -8,8 +8,7 @@ entity Departments : cuid {
 }
 
 entity Employees : cuid {
-    firstname            : String;
-    lastname             : String;
+    name            : String;
     birthDate            : Date;
     email                : String;
     groupRisk            : Boolean;
@@ -19,5 +18,6 @@ entity Employees : cuid {
     environmentEquipment : Boolean;
     department           : Association to Departments;
     inHomeOffice         : Boolean;
+    vaccinated           : Boolean;
     score                : Integer;
 }

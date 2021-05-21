@@ -11,6 +11,7 @@ module.exports = (srv) => {
             publicTransport,
             hourPublicTransport,
             environmentEquipment,
+            vaccinated,
             birthDate
         } = req.data;
 
@@ -29,14 +30,18 @@ module.exports = (srv) => {
             score += 10;
         }
         
+        score = vaccinated ? score - 100 : score;
         score = groupRisk ? score + 100 : score;
         score = livesRiskGroup ? score + 20 : score;
         score = publicTransport ? score + 10 : score;
         score = hourPublicTransport ? score + 10 : score;
         score = environmentEquipment ? score + 10 : score;
 
+        if(score < 0){
+            score = 0; 
+        }
+
         req.data.score = score;
         return next();
     })
-
 }
