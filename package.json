@@ -1,30 +1,34 @@
 {
-    "name": "desafio_final",
-    "version": "1.0.0",
-    "description": "A simple CAP project.",
-    "repository": "<Add your repository here>",
-    "license": "UNLICENSED",
-    "private": true,
-    "dependencies": {
-        "@sap/cds": "^4",
-        "@sap/hana-client": "^2.6.61",
-        "express": "^4",
-        "moment": "^2.29.1"
-    },
-    "devDependencies": {
-        "sqlite3": "^5.0.2"
-    },
-    "scripts": {
-        "start": "cds run"
-    },
-    "cds": {
-        "requires": {
-            "db": {
-                "kind": "hana"
-            }
-        },
-        "hana": {
-            "deploy-format": "hdbtable"
+  "name": "desafio_final",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^4",
+    "@sap/hana-client": "^2.6.61",
+    "express": "^4",
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.2"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana",
+        "model": "*",
+        "credentials": {
+          "database": "db/schema.db"
         }
+      }
+    },
+    "hana": {
+      "deploy-format": "hdbtable"
     }
+  }
 }

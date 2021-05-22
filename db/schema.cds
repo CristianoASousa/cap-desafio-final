@@ -2,13 +2,14 @@ namespace desafio.final;
 
 using {cuid} from '@sap/cds/common';
 
-entity Departments : cuid {
-    name    : String;
-    manager : String;
+entity Departments {
+    key ID      : Integer;
+        name    : String;
+        manager : String;
 }
 
 entity Employees : cuid {
-    name            : String;
+    name                 : String;
     birthDate            : Date;
     email                : String;
     groupRisk            : Boolean;
@@ -20,4 +21,7 @@ entity Employees : cuid {
     inHomeOffice         : Boolean;
     vaccinated           : Boolean;
     score                : Integer;
+    gotCOVID             : Boolean;
+    activeCase           : Boolean;
+    contaminationDate    : Date;
 }
