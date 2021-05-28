@@ -9,7 +9,8 @@
     "@sap/cds": "^4",
     "@sap/hana-client": "^2.6.61",
     "express": "^4",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "nodemailer": "^6.6.1"
   },
   "devDependencies": {
     "sqlite3": "^5.0.2"
